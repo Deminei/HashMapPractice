@@ -48,10 +48,21 @@ public class Book {
         directory.put(senseAndSensibility.getName(), senseAndSensibility);
         directory.put(prideAndPrejudice.getName(), prideAndPrejudice);
 
-        Book book = directory.get("Persuasion");
-        System.out.println(book);
+//        Book book = directory.get("Persuasion");
+//        System.out.println(book);
+//        System.out.println();
+//        book = directory.get("Pride and Prejudice");
+//        System.out.println(book);
+
+        long start = System.nanoTime();
+        System.out.println(directory.get("Sense and Sensibility"));
+
         System.out.println();
-        book = directory.get("Pride and Prejudice");
-        System.out.println(book);
+
+        System.out.println(directory.get("Persuasion"));
+        long end = System.nanoTime();
+        double durationInMilliseconds = 1.0 * (end - start) / 1000000;
+
+        System.out.println("The book search took " + durationInMilliseconds + " milliseconds.");
     }
 }
